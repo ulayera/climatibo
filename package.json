@@ -11,6 +11,7 @@
   "author": "github.com/ulayera",
   "license": "ISC",
   "dependencies": {
+    "@types/lodash": "^4.14.123",
     "express": "^4.16.4",
     "request-promise-native": "^1.0.7",
     "typescript": "^3.4.4"
