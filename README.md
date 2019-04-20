@@ -1,11 +1,15 @@
 # climatibo
 App for controlling several sensibo's in a more human way.
 
-#.- Set `NODE_ENV` and `SENSIBO_API_KEY` env vars.
-#.- `npm run tsc`
-#.- `npm run start`
+## Install instructions
+
+1. Set `NODE_ENV` and `SENSIBO_API_KEY` env vars.
+2. `npm run tsc`
+3. `npm run start`
 
 It will start reading your sensibo's sensors.
+
+## Future features
 
 Right now it does nothing, but soon it will:
 
