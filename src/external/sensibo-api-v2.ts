@@ -1,7 +1,8 @@
-import request = require("request-promise-native");
-import { State } from "../domain/external/sensibo/state";
+import request from "request-promise-native";
+import { AcState } from "../domain/external/sensibo/ac-state";
+import { PostPodsIdAcStatesResponse } from "../domain/external/sensibo/post-pods-id-acstates-response";
 
-export function getPodsId(apiKey: String, podUid: String) {
+export function getPodsId(apiKey: string, podUid: string) {
     let options: request.Options = {
         method: 'GET',
         url: `https://home.sensibo.com/api/v2/pods/${podUid}`,
@@ -22,7 +23,7 @@ export function getPodsId(apiKey: String, podUid: String) {
         });
 }
 
-export function getPodsIdAcstates(apiKey: String, podUid: String) {
+export function getPodsIdAcstates(apiKey: string, podUid: string) {
     let options: request.Options = {
         method: 'GET',
         url: `https://home.sensibo.com/api/v2/pods/${podUid}/acStates`,
@@ -43,7 +44,7 @@ export function getPodsIdAcstates(apiKey: String, podUid: String) {
         });
 }
 
-export function getPodsIdAcstatesProperty(apiKey: String, podUid: String, property: String) {
+export function getPodsIdAcstatesProperty(apiKey: string, podUid: string, property: string) {
     let options: request.Options = {
         method: 'GET',
         url: 'https://home.sensibo.com/api/v2/pods/${podUid}/acStates/${property}',
@@ -64,7 +65,7 @@ export function getPodsIdAcstatesProperty(apiKey: String, podUid: String, proper
         });
 }
 
-export function getPodsIdMeasurements(apiKey: String, podUid: String) {
+export function getPodsIdMeasurements(apiKey: string, podUid: string) {
     const options: request.Options = {
         method: 'GET',
         url: `https://home.sensibo.com/api/v2/pods/${podUid}/measurements`,
@@ -85,7 +86,7 @@ export function getPodsIdMeasurements(apiKey: String, podUid: String) {
         });
 }
 
-export function getUsersMePods(apiKey: String) {
+export function getUsersMePods(apiKey: string) {
     const options: request.Options = {
         method: 'GET',
         url: 'https://home.sensibo.com/api/v2/users/me/pods',
@@ -106,7 +107,7 @@ export function getUsersMePods(apiKey: String) {
         });
 }
 
-export function patchPodsIdAcstatesProperty(apiKey: String, podUid: String, property: String, value: String) {
+export function patchPodsIdAcstatesProperty(apiKey: string, podUid: string, property: string, value: string) {
     const options: request.Options = {
         method: 'PATCH',
         url: `https://home.sensibo.com/api/v2/pods/${podUid}/acStates/${property}`,
@@ -128,7 +129,7 @@ export function patchPodsIdAcstatesProperty(apiKey: String, podUid: String, prop
         });
 }
 
-export function postPodsIdAcstates(apiKey: String, podUid: String, state: State) {
+export function postPodsIdAcstates(apiKey: string, podUid: string, acState: AcState) {
     const options: request.Options = {
         method: 'POST',
         url: `https://home.sensibo.com/api/v2/pods/${podUid}/acStates`,
@@ -139,13 +140,16 @@ export function postPodsIdAcstates(apiKey: String, podUid: String, state: State)
                 'Content-Type': 'application/json',
                 Accept: 'application/json'
             },
-        body: JSON.stringify(state)
+        body: JSON.stringify({ acState })
     };
-    return request(options)
+    let responseDummy = new PostPodsIdAcStatesResponse();
+    responseDummy.status = "Success";
+    return Promise.resolve(responseDummy)/*request(options)
         .then(function (body) {
             return JSON.parse(body);
         })
         .catch(function (err) {
+            console.log(options);
             throw new Error(err);
-        });
+        })*/;
 }

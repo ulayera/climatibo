@@ -1,6 +1,8 @@
 import { ConfigMySqlConnection } from "./config-mysql-connection";
 
 export class Config {
-    apiKey: String;
+    sensiboApiKey: string;
+    overlandApiKey: string;
+    accuWeatherApiKey: string;
     mysql: ConfigMySqlConnection;
 }

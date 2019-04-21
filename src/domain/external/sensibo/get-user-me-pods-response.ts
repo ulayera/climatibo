@@ -1,15 +1,15 @@
 import { Pod } from "./pod";
 
 export class GetUsersMePodsResponse {
-    private _status: String;
+    private _status: string;
     private _result: Array<Pod>;
 
 
-    get status(): String {
+    get status(): string {
         return this._status;
     }
 
-    set status(value: String) {
+    set status(value: string) {
         this._status = value;
     }
 

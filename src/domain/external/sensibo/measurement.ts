@@ -1,23 +1,23 @@
 import { MeasurementTime } from "./measurement-time";
 
 export class Measurement {
-    private _humidity: String;
-    private _temperature: String;
+    private _humidity: Number;
+    private _temperature: Number;
     private _time: MeasurementTime;
 
-    get humidity(): String {
+    get humidity(): Number {
         return this._humidity;
     }
 
-    set humidity(value: String) {
+    set humidity(value: Number) {
         this._humidity = value;
     }
 
-    get temperature(): String {
+    get temperature(): Number {
         return this._temperature;
     }
 
-    set temperature(value: String) {
+    set temperature(value: Number) {
         this._temperature = value;
     }
 

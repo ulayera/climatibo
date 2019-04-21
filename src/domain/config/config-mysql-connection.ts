@@ -1,11 +1,11 @@
 export class ConfigMySqlConnection {
-    private _hostname: String;
-    private _username: String;
-    private _password: String;
+    private _hostname: string;
+    private _username: string;
+    private _password: string;
     private _port: Number;
-    private _databaseName: String;
+    private _databaseName: string;
 
-    constructor(hostname: String, username: String, password: String, port: Number, databaseName: String) {
+    constructor(hostname: string, username: string, password: string, port: Number, databaseName: string) {
         this._hostname = hostname;
         this._username = username;
         this._password = password;
@@ -13,27 +13,27 @@ export class ConfigMySqlConnection {
         this._databaseName = databaseName;
     }
 
-    get username(): String {
+    get username(): string {
         return this._username;
     }
 
-    set username(value: String) {
+    set username(value: string) {
         this._username = value;
     }
 
-    get hostname(): String {
+    get hostname(): string {
         return this._hostname;
     }
 
-    set hostname(value: String) {
+    set hostname(value: string) {
         this._hostname = value;
     }
 
-    get password(): String {
+    get password(): string {
         return this._password;
     }
 
-    set password(value: String) {
+    set password(value: string) {
         this._password = value;
     }
 
@@ -45,11 +45,11 @@ export class ConfigMySqlConnection {
         this._port = value;
     }
 
-    get databaseName(): String {
+    get databaseName(): string {
         return this._databaseName;
     }
 
-    set databaseName(value: String) {
+    set databaseName(value: string) {
         this._databaseName = value;
     }
 }

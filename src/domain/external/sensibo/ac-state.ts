@@ -1,24 +1,24 @@
 export class AcState {
-    private _fanLevel: String;
-    private _mode: Array<String>;
+    private _fanLevel: string;
+    private _mode: string;
     private _on: Boolean;
-    private _swing: String;
+    private _swing: string;
     private _targetTemperature: Number;
-    private _temperatureUnit: String;
+    private _temperatureUnit: string;
 
-    get fanLevel(): String {
+    get fanLevel(): string {
         return this._fanLevel;
     }
 
-    set fanLevel(value: String) {
+    set fanLevel(value: string) {
         this._fanLevel = value;
     }
 
-    get mode(): Array<String> {
+    get mode(): string {
         return this._mode;
     }
 
-    set mode(value: Array<String>) {
+    set mode(value: string) {
         this._mode = value;
     }
 
@@ -30,11 +30,11 @@ export class AcState {
         this._on = value;
     }
 
-    get swing(): String {
+    get swing(): string {
         return this._swing;
     }
 
-    set swing(value: String) {
+    set swing(value: string) {
         this._swing = value;
     }
 
@@ -46,11 +46,11 @@ export class AcState {
         this._targetTemperature = value;
     }
 
-    get temperatureUnit(): String {
+    get temperatureUnit(): string {
         return this._temperatureUnit;
     }
 
-    set temperatureUnit(value: String) {
+    set temperatureUnit(value: string) {
         this._temperatureUnit = value;
     }
 }

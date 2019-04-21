@@ -1,9 +1,9 @@
 import { State } from "./state";
 
-export class GetPodsIdAcStatesResponse {
+export class PostPodsIdAcStatesResponse {
     private _moreResults: Boolean;
     private _status: string;
-    private _result: Array<State>;
+    private _result: State;
 
     get status(): string {
         return this._status;
@@ -13,11 +13,11 @@ export class GetPodsIdAcStatesResponse {
         this._status = value;
     }
 
-    get result(): Array<State> {
+    get result(): State {
         return this._result;
     }
 
-    set result(value: Array<State>) {
+    set result(value: State) {
         this._result = value;
     }
 

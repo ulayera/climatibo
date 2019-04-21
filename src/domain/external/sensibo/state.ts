@@ -2,11 +2,11 @@ import { AcState } from "./ac-state";
 
 export class State {
     private _acState: AcState;
-    private _changedProperties: Array<String>;
-    private _failureReason: String;
-    private _id: String;
-    private _reason: String;
-    private _status: String;
+    private _changedProperties: Array<string>;
+    private _failureReason: string;
+    private _id: string;
+    private _reason: string;
+    private _status: string;
 
     get acState(): AcState {
         return this._acState;
@@ -16,43 +16,43 @@ export class State {
         this._acState = value;
     }
 
-    get changedProperties(): Array<String> {
+    get changedProperties(): Array<string> {
         return this._changedProperties;
     }
 
-    set changedProperties(value: Array<String>) {
+    set changedProperties(value: Array<string>) {
         this._changedProperties = value;
     }
 
-    get failureReason(): String {
+    get failureReason(): string {
         return this._failureReason;
     }
 
-    set failureReason(value: String) {
+    set failureReason(value: string) {
         this._failureReason = value;
     }
 
-    get id(): String {
+    get id(): string {
         return this._id;
     }
 
-    set id(value: String) {
+    set id(value: string) {
         this._id = value;
     }
 
-    get reason(): String {
+    get reason(): string {
         return this._reason;
     }
 
-    set reason(value: String) {
+    set reason(value: string) {
         this._reason = value;
     }
 
-    get status(): String {
+    get status(): string {
         return this._status;
     }
 
-    set status(value: String) {
+    set status(value: string) {
         this._status = value;
     }
 }

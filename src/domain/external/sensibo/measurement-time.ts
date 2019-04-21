@@ -1,6 +1,6 @@
 export class MeasurementTime {
     private _secondsAgo: Number;
-    private _time: String;
+    private _time: string;
 
     get secondsAgo(): Number {
         return this._secondsAgo;
@@ -10,11 +10,11 @@ export class MeasurementTime {
         this._secondsAgo = value;
     }
 
-    get time(): String {
+    get time(): string {
         return this._time;
     }
 
-    set time(value: String) {
+    set time(value: string) {
         this._time = value;
     }
 }
