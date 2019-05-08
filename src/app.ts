@@ -1,13 +1,13 @@
 import express from 'express';
 import * as LocationService from "./services/location/location-service";
-import * as WeatherService from "./services/weather/weather-service";
 import * as AcActionsService from "./services/logic/ac-actions-service";
+import * as WeatherActionsService from "./services/logic/weather-actions-service";
 import CronJob from "node-cron";
-import { AccuweatherForecast } from "./domain/external/accuweather/accuweather-forecast";
-
 
 const app: express.Application = express();
 const port = 3000;
+const AC_ACTIONS_SCHEDULE = "0 */5 * * * *";
+const WEATHER_ACTIONS_SCHEDULE = "0 0 */1 * * *";
 
 app.use(express.json());
 
@@ -22,14 +22,12 @@ app.post('/info', function (req, res) {
     });
 });
 
-app.listen(port, async function () {
-    AcActionsService.executeAcJob();
-    CronJob.schedule("0 */5 * * * *", function() {
-        AcActionsService.executeAcJob();
-    });
-    CronJob.schedule("0 0 */1 * * *", async function() {
-        let weather: AccuweatherForecast = await WeatherService.getWeather();
-        console.log(weather);
-    });
+app.listen(port, () => {
+    /**
+     * Load AC, wheather and geolocation schedules.
+     */
+    CronJob.schedule(AC_ACTIONS_SCHEDULE, AcActionsService.executeAcJob);
+    CronJob.schedule(WEATHER_ACTIONS_SCHEDULE, WeatherActionsService.executeWeatherJob);
+
     console.log(`Example app listening on port ${port}!`);
 });

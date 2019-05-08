@@ -1,35 +1,38 @@
+export interface IAccuweatherTemperature {
+    Value?: number;
+    Unit?: string;
+    UnitType?: number;
+}
+
 export class AccuweatherTemperature {
-    private _Value: number;
-    private _Unit: string;
-    private _UnitType: number;
 
     constructor(Value: number, Unit: string, UnitType: number) {
-        this._Value = Value;
-        this._Unit = Unit;
-        this._UnitType = UnitType;
+        this.Value = Value;
+        this.Unit = Unit;
+        this.UnitType = UnitType;
     }
 
     get Value(): number {
-        return this._Value;
+        return this.Value;
     }
 
     set Value(value: number) {
-        this._Value = value;
+        this.Value = value;
     }
 
     get Unit(): string {
-        return this._Unit;
+        return this.Unit;
     }
 
     set Unit(value: string) {
-        this._Unit = value;
+        this.Unit = value;
     }
 
     get UnitType(): number {
-        return this._UnitType;
+        return this.UnitType;
     }
 
     set UnitType(value: number) {
-        this._UnitType = value;
+        this.UnitType = value;
     }
 }

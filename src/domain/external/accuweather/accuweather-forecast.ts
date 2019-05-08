@@ -1,97 +1,88 @@
 import { AccuweatherTemperature } from "./accuweather-temperature";
 
-export class AccuweatherForecast {
-    private _DateTime: string;
-    private _EpochDateTime: number;
-    private _WeatherIcon: number;
-    private _IconPhrase: string;
-    private _IsDaylight: boolean;
-    private _Temperature: AccuweatherTemperature;
-    private _PrecipitationProbability: number;
-    private _MobileLink: string;
-    private _Link: string;
+export interface IAccuweatherForecast {
+    DateTime?: string;
+    EpochDateTime?: number;
+    WeatherIcon?: number;
+    IconPhrase?: string;
+    IsDaylight?: boolean;
+    Temperature?: AccuweatherTemperature;
+    PrecipitationProbability?: number;
+    MobileLink?: string;
+    Link?: string;
+}
 
-    constructor(DateTime: string, EpochDateTime: number, WeatherIcon: number, IconPhrase: string, IsDaylight: boolean, Temperature: AccuweatherTemperature, PrecipitationProbability: number, MobileLink: string, Link: string) {
-        this._DateTime = DateTime;
-        this._EpochDateTime = EpochDateTime;
-        this._WeatherIcon = WeatherIcon;
-        this._IconPhrase = IconPhrase;
-        this._IsDaylight = IsDaylight;
-        this._Temperature = Temperature;
-        this._PrecipitationProbability = PrecipitationProbability;
-        this._MobileLink = MobileLink;
-        this._Link = Link;
-    }
+export class AccuweatherForecast implements IAccuweatherForecast{
 
     get DateTime(): string {
-        return this._DateTime;
+        return this.DateTime;
     }
 
     set DateTime(value: string) {
-        this._DateTime = value;
+        this.DateTime = value;
     }
 
     get EpochDateTime(): number {
-        return this._EpochDateTime;
+        return this.EpochDateTime;
     }
 
     set EpochDateTime(value: number) {
-        this._EpochDateTime = value;
+        this.EpochDateTime = value;
     }
 
     get WeatherIcon(): number {
-        return this._WeatherIcon;
+        return this.WeatherIcon;
     }
 
     set WeatherIcon(value: number) {
-        this._WeatherIcon = value;
+        this.WeatherIcon = value;
     }
 
     get IconPhrase(): string {
-        return this._IconPhrase;
+        return this.IconPhrase;
     }
 
     set IconPhrase(value: string) {
-        this._IconPhrase = value;
+        this.IconPhrase = value;
     }
 
     get IsDaylight(): boolean {
-        return this._IsDaylight;
+        return this.IsDaylight;
     }
 
     set IsDaylight(value: boolean) {
-        this._IsDaylight = value;
+        this.IsDaylight = value;
     }
 
     get Temperature(): AccuweatherTemperature {
-        return this._Temperature;
+        return this.Temperature;
     }
 
     set Temperature(value: AccuweatherTemperature) {
-        this._Temperature = value;
+        this.Temperature = value;
     }
 
     get PrecipitationProbability(): number {
-        return this._PrecipitationProbability;
+        return this.PrecipitationProbability;
     }
 
     set PrecipitationProbability(value: number) {
-        this._PrecipitationProbability = value;
+        this.PrecipitationProbability = value;
     }
 
     get MobileLink(): string {
-        return this._MobileLink;
+        return this.MobileLink;
     }
 
     set MobileLink(value: string) {
-        this._MobileLink = value;
+        this.MobileLink = value;
     }
 
     get Link(): string {
-        return this._Link;
+        return this.Link;
     }
 
     set Link(value: string) {
-        this._Link = value;
+        this.Link = value;
     }
 }
